@@ -1,0 +1,35 @@
+---
+
+- set_fact:
+    ansibletestFolderTestPassed: false
+
+
+- name: "Start check of folder {{ path }}"
+  stat:
+    path: "{{ path }}"
+  register: st
+
+- debug:
+    var: st
+  when: "{{debug==true}}"
+
+- include: test_present.yml
+  when:
+    - "{{ state == 'present' }}"
+
+- include: test_absent.yml
+  when:
+    - "{{ state == 'absent' }}"
+
+- debug:
+    var: ansibletestFolderTestPassed
+  when: "{{debug==true}}"
+
+- fail:
+    msg: "Test Failed with path {{ path }}, state {{ state }} "
+  when:
+    - ansibletestFolderTestPassed == false
+
+
+
+

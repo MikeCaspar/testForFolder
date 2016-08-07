@@ -1,0 +1,12 @@
+- name: set test to passed if path exists and state expected = present
+  set_fact:
+      ansibletestFolderTestPassed: true
+  when:
+    - st.stat.exists
+
+- name: set test to failed if path does not exist and state expected = present
+  set_fact:
+      ansibletestFolderTestPassed: false
+  when:
+    - not st.stat.exists
+

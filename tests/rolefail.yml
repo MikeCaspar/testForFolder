@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  remote_user: root
+
+  roles:
+    - {role: ansibletest-folder, path: "/etc", state: absent }
+    - {role: ansibletest-folder, path: "/junk", state: present }
+    
