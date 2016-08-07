@@ -46,15 +46,20 @@ Example Playbook
 
 test/confirm that "/etc/" is present on the system under test
 
+
+    # playbook:  application1_proxy_test.yml
+    
     - hosts: servers
       roles:
-         - { role: MikeCaspar.ansibletest-folder, path:"/etc" , state: present}
+         - { role: MikeCaspar.testForFolder, path:"/etc" , expected: present}
      
  test/confirm that "/etc/" is absent on the system under test
 
+    # playbook:  application1_proxy_test.yml
+    
     - hosts: servers
       roles:
-         - { role: MikeCaspar.ansibletest-folder, path:"/etc" , state: absent}
+         - { role: MikeCaspar.testForFolder, path:"/etc" , expected: absent, debug: true}
     
          
 ## License
