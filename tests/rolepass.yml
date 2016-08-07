@@ -3,5 +3,7 @@
   remote_user: root
 
   roles:
+
     - {role: testForFolder, path: "/etc", state: present, debug: false }
+    - {role: testForFolder, path: "/etcbadfolder", state: absent, debug: false }
 
