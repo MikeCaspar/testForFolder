@@ -6,4 +6,4 @@
 
   roles:
 
-    - {role: testForFolder, path: "/etc", state: absent }
+    - {role: testForFolder, path: "/etc", expected: absent }

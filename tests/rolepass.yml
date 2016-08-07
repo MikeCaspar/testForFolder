@@ -4,6 +4,6 @@
 
   roles:
 
-    - {role: testForFolder, path: "/etc", state: present, debug: false }
-    - {role: testForFolder, path: "/etcbadfolder", state: absent, debug: false }
+    - {role: testForFolder, path: "/etc", expected: present, debug: false }
+    - {role: testForFolder, path: "/etcbadfolder", expected: absent, debug: false }
 

@@ -15,21 +15,19 @@
 
 - include: test_present.yml
   when:
-    - "{{ state == 'present' }}"
+    - "{{ expected == 'present' }}"
 
 - include: test_absent.yml
   when:
-    - "{{ state == 'absent' }}"
+    - "{{ expected == 'absent' }}"
 
 - debug:
     var: ansibletestFolderTestPassed
   when: "{{debug==true}}"
 
 - fail:
-    msg: "Test Failed with path {{ path }}, state {{ state }} "
+    msg: "Test Failed with path {{ path }}, expected {{ expected }} "
   when:
     - ansibletestFolderTestPassed == false
-
-
 
 

@@ -32,7 +32,7 @@ Role Variables
 --------------
 
 path (string) - Mandatory
-state (string) - Mandatory  (accepts either "present" or "absent")
+expected (string) - Mandatory  (accepts either "present" or "absent")
 debug: (true/false) - Optionally shows debug of vars as it proceeds (defaults to **false**) 
 
 Dependencies
