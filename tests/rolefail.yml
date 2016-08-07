@@ -2,7 +2,8 @@
 - hosts: localhost
   remote_user: root
 
+# This playbook should fail
+
   roles:
 
-    - {role: testForFolder, path: "/etc", state: absent, debug: false }
-    - {role: testForFolder, path: "/etcbadfolder", state: present, debug: false }
+    - {role: testForFolder, path: "/etc", state: absent }
