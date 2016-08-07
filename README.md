@@ -9,11 +9,12 @@ testForFolder (experimental role)
 
 This role is intended to be used with the maintain_ / test_ loop presented at AnsibleFest 2016 in SFO
 
-### test roles are intended to run in read only (to confirm a negative or positive test state)
+- *test roles are intended to run in read only (to confirm a negative or positive test state)*
 
-### This role is not ready.. Please do not use it yet.
+- *Should you try this role on another platform, please either do a Pull Request for the new platform or feel free to email me to ask that it be added.*
 
-The original slides for the test/maintain loop can be read about here.
+
+The original slides for the test/maintain loop can be read about [here](http://www.slideshare.net/MikeCaspar/testing-for-infrastructure-as-code-for-ansiblefest-2016-64540514).
 
 Tests during this part of the loop are created via a _test.yml file that can be separately executed from _maintain playbooks.
 
@@ -31,9 +32,9 @@ Working ansible installation 1.9 or above
 Role Variables
 --------------
 
-path (string) - Mandatory
-expected (string) - Mandatory  (accepts either "present" or "absent")
-debug: (true/false) - Optionally shows debug of vars as it proceeds (defaults to **false**) 
+* path (string) - Mandatory
+* expected (string) - Mandatory  (accepts either "present" or "absent")
+* debug: (true/false) - Optionally shows debug of vars as it proceeds (defaults to **false**) 
 
 Dependencies
 ------------
