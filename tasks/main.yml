@@ -25,9 +25,18 @@
     var: ansibletestFolderTestPassed
   when: "{{debug==true}}"
 
-- fail:
-    msg: "Test Failed with path {{ path }}, expected {{ expected }} "
+- debug:
+    msg: "TEST FAILED: timezoneCity of {{ timezoneCity }} "
+  when:
+    - ansibletestTimezoneTestPassed == false
+
+- debug:
+    msg: "TEST FAILED: with path {{ path }}, expected {{ expected }} "
   when:
     - ansibletestFolderTestPassed == false
 
+- debug:
+    msg: "TEST PASSED: with path {{ path }}, expected {{ expected }} "
+  when:
+    - ansibletestFolderTestPassed == true
 
