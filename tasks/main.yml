@@ -26,12 +26,12 @@
   when: "{{debug==true}}"
 
 - debug:
-    msg: "TEST FAILED: with path {{ path }}, expected {{ expected }} "
+    msg: "TEST_FAILED: with path {{ path }}, expected {{ expected }} "
   when:
     - ansibletestFolderTestPassed == false
 
 - debug:
-    msg: "TEST PASSED: with path {{ path }}, expected {{ expected }} "
+    msg: "TEST_PASSED: with path {{ path }}, expected {{ expected }} "
   when:
     - ansibletestFolderTestPassed == true
 

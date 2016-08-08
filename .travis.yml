@@ -28,8 +28,8 @@ script:
 
   - ansible-playbook tests/role.yml > log.txt
 
-  - grep '.*TEST PASSED:' log.txt > logpass.txt
-  - grep '.*TEST FAILED:' log.txt > logfail.txt
+  - grep '.*TEST_PASSED:' log.txt > logpass.txt
+  - grep '.*TEST_FAILED:' log.txt > logfail.txt
 
 # figure out how to check for correct number of passes and fails
 # then return 0 or 1
