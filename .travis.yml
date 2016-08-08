@@ -25,12 +25,10 @@ install:
 
 script:
   - ansible-playbook --syntax-check tests/role.yml
-  - >
-    ansible-playbook --sudo tests/role.yml
-    | grep -q '.*failed=1'
+  - ansible-playbook --sudo tests/role.yml > log.txt
+  - grep -q '.*TEST FAILED:' log.txt
     && (echo 'Role test: pass' && exit 0)
     || (echo 'Role test: fail' && exit 1)
-
 
 webhooks: https://galaxy.ansible.com/api/v1/notifications/
 

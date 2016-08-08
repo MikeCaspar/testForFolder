@@ -26,11 +26,6 @@
   when: "{{debug==true}}"
 
 - debug:
-    msg: "TEST FAILED: timezoneCity of {{ timezoneCity }} "
-  when:
-    - ansibletestTimezoneTestPassed == false
-
-- debug:
     msg: "TEST FAILED: with path {{ path }}, expected {{ expected }} "
   when:
     - ansibletestFolderTestPassed == false

@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  remote_user: root
-
-  roles:
-
-    - {role: testForFolder, path: "/etc", expected: present, debug: false }
-    - {role: testForFolder, path: "/etcbadfolder", expected: absent, debug: false }
-

@@ -1,4 +1,12 @@
 ---
+- hosts: localhost
+  remote_user: root
 
-- include: rolepass.yml
-- include: rolefail.yml
+  roles:
+
+    - {role: testForFolder, path: "/etc", expected: present, debug: false }
+
+    - {role: testForFolder, path: "/etcbadfolder", expected: absent, debug: false }
+
+    - {role: testForFolder, path: "/etc", expected: absent }
+
