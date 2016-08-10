@@ -10,5 +10,5 @@
 
     - {role: testForFolder, path: "/etc", expected: absent }
 
-    - {role: testForFolder, path: "/etc", expected: absent, immediate_exit_on_fail: true }
+    - {role: testForFolder, path: "/etc", expected: absent, immediate_exit_on_fail: false }
 
