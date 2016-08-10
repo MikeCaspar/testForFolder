@@ -3,7 +3,6 @@
 - set_fact:
     ansibletestFolderTestPassed: false
 
-
 - name: "Start check of folder {{ path }}"
   stat:
     path: "{{ path }}"
@@ -25,13 +24,22 @@
     var: ansibletestFolderTestPassed
   when: "{{debug==true}}"
 
-- debug:
-    msg: "TEST_FAILED: with path {{ path }}, expected {{ expected }} "
-  when:
-    - ansibletestFolderTestPassed == false
 
 - debug:
     msg: "TEST_PASSED: with path {{ path }}, expected {{ expected }} "
   when:
     - ansibletestFolderTestPassed == true
+
+# failed tests either debug a failed message or fail immediately (as requested by the calling _test playbook
+
+- debug:
+    msg: "TEST_FAILED: with path {{ path }}, expected {{ expected }} "
+  when:
+    - ansibletestFolderTestPassed == false
+
+- fail:
+    msg: "TEST_FAILED: with path {{ path }}, expected {{ expected }} "
+  when:
+    - ansibletestFolderTestPassed == false
+    - immediate_exit_on_fail == true
 

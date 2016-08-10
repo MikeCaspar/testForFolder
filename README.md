@@ -34,8 +34,11 @@ Role Variables
 
 * path (string) - Mandatory
 * expected (string) - Mandatory  (accepts either "present" or "absent")
-* debug: (true/false) - Optionally shows debug of vars as it proceeds (defaults to **false**) 
-
+* debug: (true/false) - Optionally shows debug of vars as it proceeds (defaults to **false**)
+ 
+**Currently testing a new design idea of adding parameter immediate_exit_on_fail: true (defaults to false).
+**This could be tested by pulling from git instead of galaxy releases
+ 
 Dependencies
 ------------
 
