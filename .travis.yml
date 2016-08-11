@@ -24,19 +24,8 @@ install:
   - echo -e '[defaults]\nroles_path = ../\nhostfile = ./tests/inventory' > ansible.cfg
 
 script:
-  - ansible-playbook --syntax-check tests/role.yml
+  - ./test.sh
 
-  - ansible-playbook tests/role.yml > log.txt
-
-  - grep '.*TEST_PASSED:' log.txt > logpass.txt
-  - grep '.*TEST_FAILED:' log.txt > logfail.txt
-
-# figure out how to check for correct number of passes and fails
-# then return 0 or 1
-
-#  - grep -q '.*TEST FAILED:'
-#    && (echo 'Role test: pass' && exit 0)
-#    || (echo 'Role test: fail' && exit 1)
-
-webhooks: https://galaxy.ansible.com/api/v1/notifications/
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
 
