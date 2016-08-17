@@ -36,6 +36,8 @@
     msg: "TEST_FAILED: with path {{ path }}, expected {{ expected }} "
   when:
     - ansibletestFolderTestPassed == false
+    - immediate_exit_on_fail == false
+
 
 - fail:
     msg: "TEST_FAILED: with path {{ path }}, expected {{ expected }} "
