@@ -1,7 +1,7 @@
 testForFolder
 =============================
 
-testForFolder (experimental role)
+testForFolder (test/confirm folder)
 
 
 [![Build Status](https://travis-ci.org/MikeCaspar/testForFolder.svg?branch=master)](https://travis-ci.org/MikeCaspar/testForFolder)
@@ -20,7 +20,7 @@ Tests during this part of the loop are created via a _test.yml file that can be 
 
 This allows a test first/test parallel type approach with the ability to also use _test.yml as a form of governance check.
 
-To provide samples to those that wish to use this approach, I decided it was a good idea to share pre-defined exmaple roles for those that wish to take this approach and do not want to start from scratch.
+To provide samples to those that wish to use this approach, I decided it was a good idea to share pre-defined example roles for those that wish to take this approach and do not want to start from scratch.
 
 The intent is to allow teams working on infrastructure to use existing ansible yaml syntax without having to learn python development.
 
